@@ -74,10 +74,25 @@ body {
   color: var(--color2);
 }
 
+.tags-input-container span {
+  display: flex;
+  width: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  color: var(--color2);
+  opacity: 0.5;
+  font-size: 0.8rem;
+}
+
 .tags-container input {
   width: 100%;
   height: 2rem;
   padding: 0.2rem;
+  padding-right: 1.5em;
   border: 0.1rem solid rgba(255, 255, 255, 0.5);
   border-left: none;
   border-radius: 0 0.3rem 0.3rem 0;

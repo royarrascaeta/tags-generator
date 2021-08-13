@@ -4,14 +4,19 @@ const d = document;
 const $input = d.querySelector(".tags-container input");
 const $tags = d.querySelector(".tags");
 const $tagsMessage = d.querySelector(".tags-message");
+const $charCount = d.querySelector(".tags-input-container span");
+let chars = 30;
 
 //Añado el evento "keydown" al input, si el usuario presiona la tecla Espacio o Enter ejecuto la función createTag y le mando el valor sin espacios
 $input.addEventListener("keyup",(e)=>{
-  let regexp = /^[A-Za-z0-9Ññ]+$/;
-
-  console.log(e)
   
-  if((e.keyCode == 32 || e.key == "Enter") && $input.value.match(regexp)){
+  //Contador de caracteres
+  $charCount.innerText = chars - $input.value.length;  
+
+  //Validaciones y ejecucion
+  let regexp = /^[A-Za-z0-9Ññ]{0,30}$/;
+
+  if((e.keyCode == 13 || e.key == "Enter") && $input.value.match(regexp)){
     $tagsMessage.style.display = "none";
     let value = e.target.value;
     createTag(value.trim());
@@ -22,10 +27,10 @@ $input.addEventListener("keyup",(e)=>{
     return !regexp.exec($input.value)
       ? $tagsMessage.style.display = "block"
       : $tagsMessage.style.display = "none"
-  }else{
+  }
+  else{
     $tagsMessage.style.display = "none"
   }
-
 })
 
 //Genero el span y el botón para eliminar la etiqueta, le añado un eventListener al click y ejecuto la función deleteTag
