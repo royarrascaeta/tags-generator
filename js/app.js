@@ -6,7 +6,7 @@ const $tags = d.querySelector(".tags");
 const $tagsMessage = d.querySelector(".tags-message");
 
 //Añado el evento "keydown" al input, si el usuario presiona la tecla Espacio o Enter ejecuto la función createTag y le mando el valor sin espacios
-$input.addEventListener("keydown",(e)=>{
+$input.addEventListener("keyup",(e)=>{
   let regexp = /[a-zA-Z0-9ñÑ]/;
 
   if(!e.key.match(regexp) || ($input.value.length == 30 && e.keyCode !== 8)){
