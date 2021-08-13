@@ -10,7 +10,6 @@ $input.addEventListener("keyup",(e)=>{
   let regexp = /^[A-Za-z0-9Ññ]+$/;
 
   if((e.keyCode == 32 || e.keyCode == 13) && $input.value.slice(0, -1).match(regexp)){
-    console.log("Condicional 1");
     $tagsMessage.style.display = "none";
     let value = e.target.value;
     createTag(value.trim());
