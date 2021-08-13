@@ -21,6 +21,7 @@ $input.addEventListener("keyup",(e)=>{
     let value = e.target.value;
     createTag(value.trim());
     $input.value = null;
+    $charCount.innerText = chars;
   }
   
   if($input.value !==""){
