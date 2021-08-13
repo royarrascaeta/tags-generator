@@ -9,7 +9,9 @@ const $tagsMessage = d.querySelector(".tags-message");
 $input.addEventListener("keyup",(e)=>{
   let regexp = /^[A-Za-z0-9Ññ]+$/;
 
-  if((e.keyCode == 32 || e.keyCode == 13) && $input.value.slice(0, -1).match(regexp)){
+  console.log(e)
+  
+  if((e.keyCode == 32 || e.key == "Enter") && $input.value.match(regexp)){
     $tagsMessage.style.display = "none";
     let value = e.target.value;
     createTag(value.trim());
