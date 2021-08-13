@@ -1,0 +1,189 @@
+/* Variables */
+:root {
+  --color1: #2a2d34;
+  --color2: #dddbcb;
+  --color3: #f08700;
+  --color4: #6a0136;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General styles */
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  font-family: "Georama", sans-serif;
+  background-color: var(--color1);
+}
+
+/* Tags generator styles */
+.tags-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  width: min-content;
+  min-width: 90%;
+  border: 0.2rem solid var(--color3);
+  border-radius: 1rem;
+  overflow-x: auto;
+  animation-name: scaleUp;
+  animation-duration: 2s;
+}
+
+.tags-container h1 {
+  margin: 1rem 0;
+  text-transform: capitalize;
+  font-size: 2.4rem;
+  color: var(--color3);
+}
+
+.tags-container p {
+  margin: 1rem 0;
+  color: var(--color2);
+  opacity: 0.7;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.tags-input-container {
+  width: 80%;
+  display: flex;
+  position: relative;
+  margin: 1rem 0;
+}
+
+.tags-input-container i {
+  padding: 0.5rem;
+  border-radius: 0.3rem 0 0 0.3rem;
+  background-color: var(--color3);
+  color: var(--color2);
+}
+
+.tags-container input {
+  width: 100%;
+  height: 2rem;
+  padding: 0.2rem;
+  border: 0.1rem solid rgba(255, 255, 255, 0.5);
+  border-left: none;
+  border-radius: 0 0.3rem 0.3rem 0;
+  font-size: 1.4rem;
+  color: var(--color2);
+  background-color: var(--color1);
+}
+
+.tags-container input:focus {
+  outline: none !important;
+  border-color: var(--color3);
+  transition: all ease-in 0.5s;
+}
+
+.tags-container input::placeholder {
+  text-align: center;
+  font-size: 1.4rem;
+  color: var(--color2);
+  opacity: 0.5;
+}
+
+.tags-container .tags-message {
+  display: none;
+  width: 80%;
+  padding: 0.5rem;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.3rem;
+  background-color: var(--color4);
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--color2);
+  transition: transform ease-in 0.5s;
+}
+
+.tags {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tags span {
+  position: relative;
+  margin: 0.2rem;
+  padding: 0.5rem 1.4rem;
+  border-radius: 0.8rem;
+  background-color: var(--color3);
+  color: var(--color2);
+  text-align: center;
+  animation-name: scaleUp;
+  animation-duration: 0.5s;
+}
+
+.tags span button {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  border: none;
+  text-align: center;
+  background-color: var(--color2);
+  color: var(--color1);
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  40% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleDown {
+  0% {
+    transform: scale(1);
+    width: auto;
+  }
+
+  40% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+/* Media queries */
+@media screen and (min-width: 576px) {
+  .tags-container {
+    min-width: 80%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .tags-container {
+    min-width: 900px;
+  }
+}
